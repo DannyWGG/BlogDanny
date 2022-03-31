@@ -1,0 +1,47 @@
+    <body>
+        <link rel="stylesheet" href="CCSBasico/estilosBasicos.css">
+        <div class="DivNav">
+        <header>
+        <nav class="menu">
+            <ul>
+                <li><a>Nombre de la Pagina</a></li>
+                <li><a href="Login/logout.php">Cerrar Seccion</a></li>
+                <li><a href="#">Acerca de:</a></li>
+            </ul>
+        </nav>
+        </header>
+        </div>
+        <div class="RegiPrincipal">
+            
+            <div class="formuReg">
+               
+                <form name="form1" method="post" action="">
+                    <label for="textarea"></label>
+                     <center>
+                    <p>
+                    <textarea name="comentario" cols="80" rows="5" id="textarea"><?php if(isset($_GET['user'])) { ?>@<?php echo $_GET['user']; ?><?php } ?> </textarea>
+                    </p>
+                    <p>
+                    <input type="submit" <?php if (isset($_GET['id'])) { ?>name="reply"<?php } else { ?>name="comentar"<?php } ?>value="Comentar">
+                    </p>
+                    </center>
+                </form>
+            
+            </div>
+            
+            
+            
+            <div class="formuReg">
+                <label class="form-label">Nombre</label> 
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" value="" required>
+            </div>
+
+        </div>
+        <div class="ImagenPrincipal">
+            <img src="ImagenPrincipal/imagen.png">
+        </div>
+        <div class="PieDPagina">
+            <footer>Informacion de pie de pagina</footer>
+        </div>
+        
+    </body>

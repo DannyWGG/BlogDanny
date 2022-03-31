@@ -1,0 +1,74 @@
+    <body>
+        <div class="container">      
+            <div class="row">
+        <div class="col-md-12">
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Blog
+  </a>
+          <a class="navbar-brand" href="Login/login.php">Iniciar Sesión
+  </a>
+</nav>
+</div>
+
+        <div class="col-md-6">
+            <img class="img-thumbnail" src="ImagenPrincipal/trabajoadistancia-635x357.jpg">
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-12">
+            <form action="FuncionesInfo/guardar.php" id="formulario" method="POST" enctype="multipart/form-data" autocomplete="off">
+            
+                <div class="formuReg">
+                <label class="form-label">Nombre</label> 
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" value="" required>
+            </div>
+
+            <div class="formuReg">
+              <label class="form-label">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+            </div>
+            <div class="formuReg">
+                <label class="form-label">Contraseña</label> 
+                <input type="password" class="form-control" name="pass1" id="pass1" placeholder="" value="" required>
+            </div>
+            <div class="formuReg">
+                <label class="form-label">Confirmar Contraseña</label> 
+                <input type="password" class="form-control" name="pass2" id="pass2" placeholder="" value="" required>
+            </div>    
+            <div class="formuReg">
+                <label class="form-label">Foto de Perfil</label>
+                <br>
+                <input type="file" class="form-control" name="archivo" id="archivo">
+            </div>
+                <br>
+            <button type="submit" class="btn btn-info">Registrarse
+                 </button>
+            </form>
+            </div>
+        </div>
+        </div>
+        </div>
+        
+        <script>
+        // Obtener referencias 
+        const $formulario = document.querySelector("#formulario"),
+            $nombre = document.querySelector("#nombre"),
+            $correo = document.querySelector("#email");
+        $formulario.onsubmit = evento => {
+            evento.preventDefault();
+            const nombre = $nombre.value,
+                correo = $correo.value;
+            // Validar
+            if (nombre === "Luis" || nombre === "José") {
+                alert("No pueden ser esos nombres");
+                return;
+            }
+            if (correo.endsWith("@hotmail.com")) {
+                alert("No puede ser de hotmail");
+                return;
+            }
+            $formulario.submit();
+        };
+    </script>
+        
+    </body>
